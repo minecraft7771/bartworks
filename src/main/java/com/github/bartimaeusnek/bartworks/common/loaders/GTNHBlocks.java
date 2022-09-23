@@ -30,6 +30,7 @@ import com.github.bartimaeusnek.bartworks.API.LoaderReference;
  * Executed on 2019-01-03 02:08:43
  * modified by bartimaeusnek to only add blocks that mods are loaded
  * modified by bartimaeusnek on 2020-03-22 00:20 to run statically
+ * modified by Quarri6343 on 2022-08-24 20:02 to add Botania Support
  */
 public class GTNHBlocks {
 
@@ -39,8 +40,13 @@ public class GTNHBlocks {
 
         if (LoaderReference.BloodArsenal)
             BioVatLogicAdder.BioVatGlass.addCustomGlass("BloodArsenal", "blood_stained_glass", 0, 3);
-        if (LoaderReference.Botany)
-            BioVatLogicAdder.BioVatGlass.addCustomGlass("Botany", "stained", 0, 3);
+        if (LoaderReference.Botania) {
+            BioVatLogicAdder.BioVatGlass.addCustomGlass("Botania", "manaGlass", 0, 4);
+            BioVatLogicAdder.BioVatGlass.addCustomGlass("Botania", "manaGlassPane", 0, 4);
+            BioVatLogicAdder.BioVatGlass.addCustomGlass("Botania", "elfGlass", 0, 5);
+            BioVatLogicAdder.BioVatGlass.addCustomGlass("Botania", "elfGlassPane", 0, 5);
+        }
+        if (LoaderReference.Botany) BioVatLogicAdder.BioVatGlass.addCustomGlass("Botany", "stained", 0, 3);
         if (LoaderReference.EnderIO)
             for (int i = 0; i <= 5; ++i)
                 BioVatLogicAdder.BioVatGlass.addCustomGlass("EnderIO", "blockFusedQuartz", i, 3);
@@ -58,29 +64,23 @@ public class GTNHBlocks {
             BioVatLogicAdder.BioVatGlass.addCustomGlass("HardcoreEnderExpension", "laboratory_glass", 0, 3);
 
         if (LoaderReference.Natura)
-            for (int i = 0; i <= 1; ++i)
-                BioVatLogicAdder.BioVatGlass.addCustomGlass("Natura", "NetherGlass", i, 3);
+            for (int i = 0; i <= 1; ++i) BioVatLogicAdder.BioVatGlass.addCustomGlass("Natura", "NetherGlass", i, 3);
 
         if (LoaderReference.RandomThings)
             BioVatLogicAdder.BioVatGlass.addCustomGlass("RandomThings", "spectreGlass", 0, 3);
-        if (LoaderReference.TConstruct)
-            BioVatLogicAdder.BioVatGlass.addCustomGlass("TConstruct", "GlassBlock", 0, 3);
-        if (LoaderReference.tectech)
-            BioVatLogicAdder.BioVatGlass.addCustomGlass("tectech", "tile.quantumGlass", 0, 8);
+        if (LoaderReference.TConstruct) BioVatLogicAdder.BioVatGlass.addCustomGlass("TConstruct", "GlassBlock", 0, 3);
+        if (LoaderReference.tectech) BioVatLogicAdder.BioVatGlass.addCustomGlass("tectech", "tile.quantumGlass", 0, 8);
 
-        if (LoaderReference.chisel)
-            BioVatLogicAdder.BioVatGlass.addCustomGlass("chisel", "glass2", 0, 3);
+        if (LoaderReference.chisel) BioVatLogicAdder.BioVatGlass.addCustomGlass("chisel", "glass2", 0, 3);
 
         for (int i = 0; i <= 15; ++i) {
             BioVatLogicAdder.BioVatGlass.addCustomGlass("minecraft", "stained_glass", i, 3);
             if (LoaderReference.GalaxySpace)
                 BioVatLogicAdder.BioVatGlass.addCustomGlass("GalaxySpace", "futureglasses", i, 3);
-            if (LoaderReference.Railcraft)
-                BioVatLogicAdder.BioVatGlass.addCustomGlass("Railcraft", "glass", i, 3);
+            if (LoaderReference.Railcraft) BioVatLogicAdder.BioVatGlass.addCustomGlass("Railcraft", "glass", i, 3);
             if (LoaderReference.TConstruct)
                 BioVatLogicAdder.BioVatGlass.addCustomGlass("TConstruct", "GlassBlock.StainedClear", i, 3);
-            if (LoaderReference.Ztones)
-                BioVatLogicAdder.BioVatGlass.addCustomGlass("Ztones", "tile.glaxx", i, 3);
+            if (LoaderReference.Ztones) BioVatLogicAdder.BioVatGlass.addCustomGlass("Ztones", "tile.glaxx", i, 3);
             if (LoaderReference.chisel) {
                 BioVatLogicAdder.BioVatGlass.addCustomGlass("chisel", "glass", i, 3);
                 BioVatLogicAdder.BioVatGlass.addCustomGlass("chisel", "stained_glass_white", i, 3);
@@ -89,8 +89,7 @@ public class GTNHBlocks {
                 BioVatLogicAdder.BioVatGlass.addCustomGlass("chisel", "stained_glass_brown", i, 3);
                 BioVatLogicAdder.BioVatGlass.addCustomGlass("chisel", "stained_glass_forestry", i, 3);
             }
-            if (LoaderReference.witchery)
-                BioVatLogicAdder.BioVatGlass.addCustomGlass("witchery", "shadedglass", i, 3);
+            if (LoaderReference.witchery) BioVatLogicAdder.BioVatGlass.addCustomGlass("witchery", "shadedglass", i, 3);
         }
     }
 }
