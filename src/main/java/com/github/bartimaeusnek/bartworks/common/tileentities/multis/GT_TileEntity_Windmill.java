@@ -240,7 +240,7 @@ public class GT_TileEntity_Windmill extends GT_MetaTileEntity_EnhancedMultiBlock
             // Decrease input stack by appropriate amount (Not always 1)
             for (int i = 0; i < this.mMulti; i++) {
                 if (!tRecipe.isRecipeInputEqual(true, null, itemStack)) {
-                    this.mMulti = i + 1;
+                    this.mMulti = i;
                     break;
                 }
             }
@@ -255,22 +255,22 @@ public class GT_TileEntity_Windmill extends GT_MetaTileEntity_EnhancedMultiBlock
                                     * ((float) Math.sqrt((float) 1 / (this.rotorBlock.getWindStrength() + 1)))
                                     * OutputMultiplier(rotorBlock)
                                     * (mRecipe[0] + mRecipe[1])));
-            int amount = Math.round(multiper * (this.mOutputItems[0].stackSize * this.mMulti));
+            int amount = (int) Math.floor(multiper * (this.mOutputItems[0].stackSize * this.mMulti));
 
             // Split ItemStack --by gtpp
             List<ItemStack> splitStacks = new ArrayList<>();
             while (amount > this.mOutputItems[0].getMaxStackSize()) {
-                ItemStack tmp = this.mOutputItems[0];
+                ItemStack tmp = this.mOutputItems[0].copy();
                 tmp.stackSize = this.mOutputItems[0].getMaxStackSize();
                 amount -= this.mOutputItems[0].getMaxStackSize();
                 splitStacks.add(tmp);
             }
-            ItemStack tmp = this.mOutputItems[0];
+            ItemStack tmp = this.mOutputItems[0].copy();
             tmp.stackSize = amount;
             splitStacks.add(tmp);
             mOutputItems = splitStacks.toArray(new ItemStack[splitStacks.size()]);
         }
-        this.mMaxProgresstime = (tRecipe.mDuration * 2 * 100 * this.mMulti) / (int) getSpeed(rotorBlock);
+        this.mMaxProgresstime = (tRecipe.mDuration * 2 * 100 * this.mMulti) / getSpeed(rotorBlock);
         this.mMulti = 16;
         return true;
     }
