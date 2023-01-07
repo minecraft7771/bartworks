@@ -318,12 +318,8 @@ public class GT_TileEntity_MegaOilCracker extends GT_TileEntity_MegaMultiBlockBa
                     .setEUt(nominalV)
                     .calculate();
 
-            try {
-                this.mMaxProgresstime = calculator.getDuration();
-                this.lEUt = calculator.getConsumption();
-            } catch (Exception ignored) {
-                return false;
-            }
+            this.mMaxProgresstime = calculator.getDuration();
+            this.lEUt = calculator.getConsumption();
 
             // In case recipe is too OP for that machine
             if (this.mMaxProgresstime == Integer.MAX_VALUE - 1 && this.lEUt == Integer.MAX_VALUE - 1) {
