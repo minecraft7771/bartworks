@@ -227,12 +227,12 @@ public class GT_TileEntity_MegaChemicalReactor
             this.mEfficiencyIncrease = 10000;
 
             GT_OverclockCalculator calculator = new GT_OverclockCalculator()
-                .setRecipeEUt(tRecipe.mEUt)
-                .setParallel(processed)
-                .setDuration(tRecipe.mDuration)
-                .setEUt(nominalV)
-                .enablePerfectOC()
-                .calculate();
+                    .setRecipeEUt(tRecipe.mEUt)
+                    .setParallel(processed)
+                    .setDuration(tRecipe.mDuration)
+                    .setEUt(nominalV)
+                    .enablePerfectOC()
+                    .calculate();
 
             try {
                 this.mMaxProgresstime = calculator.getDuration();

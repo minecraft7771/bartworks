@@ -472,11 +472,11 @@ public class GT_TileEntity_MegaVacuumFreezer extends GT_TileEntity_MegaMultiBloc
             this.mEfficiencyIncrease = 10000;
 
             GT_OverclockCalculator calculator = new GT_OverclockCalculator()
-                .setRecipeEUt(tRecipe.mEUt)
-                .setParallel(processed)
-                .setDuration(tRecipe.mDuration)
-                .setEUt(nominalV)
-                .calculate();
+                    .setRecipeEUt(tRecipe.mEUt)
+                    .setParallel(processed)
+                    .setDuration(tRecipe.mDuration)
+                    .setEUt(nominalV)
+                    .calculate();
 
             try {
                 this.mMaxProgresstime = calculator.getDuration();

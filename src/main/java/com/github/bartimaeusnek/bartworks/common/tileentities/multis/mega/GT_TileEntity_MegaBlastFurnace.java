@@ -431,15 +431,15 @@ public class GT_TileEntity_MegaBlastFurnace extends GT_TileEntity_MegaMultiBlock
             this.mEfficiencyIncrease = 10000;
 
             GT_OverclockCalculator calculator = new GT_OverclockCalculator()
-                .setRecipeEUt(tRecipe.mEUt)
-                .setParallel(processed)
-                .setDuration(tRecipe.mDuration)
-                .setEUt(nominalV)
-                .setRecipeHeat(tRecipe.mSpecialValue)
-                .setMultiHeat(mHeatingCapacity)
-                .enableHeatOC()
-                .enableHeatDiscount()
-                .calculate();
+                    .setRecipeEUt(tRecipe.mEUt)
+                    .setParallel(processed)
+                    .setDuration(tRecipe.mDuration)
+                    .setEUt(nominalV)
+                    .setRecipeHeat(tRecipe.mSpecialValue)
+                    .setMultiHeat(mHeatingCapacity)
+                    .enableHeatOC()
+                    .enableHeatDiscount()
+                    .calculate();
 
             try {
                 this.mMaxProgresstime = calculator.getDuration();
